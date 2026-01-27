@@ -6,7 +6,20 @@ import hero from "@/public/unnamed.png";
 //UI
 import CountUp from "@/component/UI/CountUp";
 //Icons
-import { LaptopMinimal, Smartphone, Code, Cpu } from "lucide-react";
+import {
+  LaptopMinimal,
+  Smartphone,
+  Code,
+  Cpu,
+  CloudUpload,
+  Shield,
+  Globe,
+  Wrench,
+  Brain,
+  GraduationCap,
+  Palette,
+  Wallet,
+} from "lucide-react";
 
 const Home = async () => {
   return (
@@ -206,6 +219,132 @@ const Home = async () => {
                 <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
                   Advanced machine learning models and intelligent automation
                   systems.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 5 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <CloudUpload />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Cloud Services
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Scalable cloud infrastructure, migration, and optimized
+                  management.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 6 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Shield />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Cybersecurity & Penetration Testing
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Enterprise-grade protection and proactive threat intelligence.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 7 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Globe />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Networking Services
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Reliable network design, setup, and optimization for seamless
+                  connectivity.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 8 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Wrench />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Tech Support & Maintenance
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Ongoing technical support to keep your systems running
+                  smoothly.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 9 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Brain />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Tech Consulting / IT Advisory
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Expert guidance to help you choose and implement the right
+                  technologies..
+                </p>
+              </div>
+            </div>
+
+            {/* Service 10 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <GraduationCap />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Education & Mentorship
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Practical training and mentorship to grow tech skills and
+                  careers.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 11 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Palette />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Digital & Creative Services
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Branding, UI/UX, and creative designs that make your business
+                  stand out.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 12 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Wallet />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Gift Card Services
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Secure digital gift cards for seamless payments and rewards.
                 </p>
               </div>
             </div>
