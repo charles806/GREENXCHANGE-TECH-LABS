@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 interface LoadingContextType {
@@ -27,11 +33,10 @@ export const LoadingProvider = ({ children }: LoadingProviderProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingStartTime, setLoadingStartTime] = useState<number | null>(null);
   const [pageLoadComplete, setPageLoadComplete] = useState(false);
-  
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Start loading on route change
   useEffect(() => {
     const handleStart = () => {
       setIsLoading(true);
@@ -42,7 +47,6 @@ export const LoadingProvider = ({ children }: LoadingProviderProps) => {
     handleStart();
   }, [pathname, searchParams]);
 
-  // Mark page load as complete after component mounts
   useEffect(() => {
     if (isLoading) {
       // Small delay to ensure page has started rendering
@@ -58,7 +62,7 @@ export const LoadingProvider = ({ children }: LoadingProviderProps) => {
   useEffect(() => {
     if (!pageLoadComplete || !loadingStartTime) return;
 
-    const MINIMUM_DISPLAY_TIME = 1000;
+    const MINIMUM_DISPLAY_TIME = 100;
     const elapsedTime = Date.now() - loadingStartTime;
     const remainingTime = Math.max(0, MINIMUM_DISPLAY_TIME - elapsedTime);
 

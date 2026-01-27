@@ -47,9 +47,14 @@ const Home = async () => {
         </div>
       </section>
       {/* Service Section */}
-      <section className="bg-white dark:bg-background-dark/50 py-20 border-y border-[#e5e9e8] dark:border-[#1e3a30]">
+      <section className="bg-[#d1d1d1] py-20 border-y border-[#e5e9e8] dark:border-[#1e3a30]">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
-          
+          <div className="flex flex-col gap-4 mb-12">
+            <h1 className="text-[#111816] text-3xl font-bold tracking-tight">
+              Our Services
+            </h1>
+            <div className="h-1.5 w-20 bg-green-400 rounded-full"></div>
+          </div>
         </div>
       </section>
     </main>
