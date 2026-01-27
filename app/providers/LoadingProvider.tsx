@@ -6,6 +6,7 @@ import {
   useState,
   useEffect,
   ReactNode,
+  Suspense,
 } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -29,7 +30,8 @@ interface LoadingProviderProps {
   children: ReactNode;
 }
 
-export const LoadingProvider = ({ children }: LoadingProviderProps) => {
+// Internal component that uses useSearchParams
+function LoadingProviderContent({ children }: LoadingProviderProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingStartTime, setLoadingStartTime] = useState<number | null>(null);
   const [pageLoadComplete, setPageLoadComplete] = useState(false);
@@ -62,7 +64,7 @@ export const LoadingProvider = ({ children }: LoadingProviderProps) => {
   useEffect(() => {
     if (!pageLoadComplete || !loadingStartTime) return;
 
-    const MINIMUM_DISPLAY_TIME = 100;
+    const MINIMUM_DISPLAY_TIME = 5000;
     const elapsedTime = Date.now() - loadingStartTime;
     const remainingTime = Math.max(0, MINIMUM_DISPLAY_TIME - elapsedTime);
 
@@ -89,5 +91,14 @@ export const LoadingProvider = ({ children }: LoadingProviderProps) => {
     <LoadingContext.Provider value={{ isLoading, startLoading, stopLoading }}>
       {children}
     </LoadingContext.Provider>
+  );
+}
+
+// Main export wrapped in Suspense
+export const LoadingProvider = ({ children }: LoadingProviderProps) => {
+  return (
+    <Suspense fallback={null}>
+      <LoadingProviderContent>{children}</LoadingProviderContent>
+    </Suspense>
   );
 };
