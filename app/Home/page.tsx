@@ -1,12 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { links } from "@/app/libs/constant/link";
+//Image
 import hero from "@/public/unnamed.png";
+//UI
+import CountUp from "@/component/UI/CountUp";
+//Icons
+import { LaptopMinimal, Smartphone, Code, Cpu } from "lucide-react";
 
 const Home = async () => {
   return (
-    <main className="min-h-screen mx-auto">
-      {/* Service Section */}
+    <main className="min-h-screen mx-auto bg-[#e8e8e8]">
+      {/* Home Section */}
       <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-12 md:py-20 mt-12">
         <div className="@container">
           <div className="flex flex-col gap-10 @[864px]:flex-row items-center">
@@ -46,14 +51,164 @@ const Home = async () => {
           </div>
         </div>
       </section>
+
+      {/* Quick Overview */}
+      <section className="bg-green-500 mx-auto w-full px-6 md:px-10 py-12 md:py-12 mt-12 border border-t">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="flex items-baseline">
+                <CountUp
+                  from={0}
+                  to={25}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="text-5xl md:text-7xl font-extrabold text-white tracking-tight"
+                />
+                <span className="text-5xl md:text-7xl font-extrabold text-white ml-1">
+                  +
+                </span>
+              </div>
+              <span className="text-white/90 font-medium text-base md:text-lg leading-tight px-2">
+                Happy Clients
+              </span>
+            </div>
+
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="flex items-baseline">
+                <CountUp
+                  from={0}
+                  to={20}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="text-5xl md:text-7xl font-extrabold text-white tracking-tight"
+                />
+                <span className="text-5xl md:text-7xl font-extrabold text-white ml-1">
+                  +
+                </span>
+              </div>
+              <span className="text-white/90 font-medium text-base md:text-lg leading-tight px-2">
+                Projects Completed
+              </span>
+            </div>
+
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="flex items-baseline">
+                <CountUp
+                  from={0}
+                  to={5}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="text-5xl md:text-7xl font-extrabold text-white tracking-tight"
+                />
+                <span className="text-5xl md:text-7xl font-extrabold text-white ml-1">
+                  +
+                </span>
+              </div>
+              <span className="text-white/90 font-medium text-base md:text-lg leading-tight px-2">
+                Years Experience
+              </span>
+            </div>
+
+            <div className="flex flex-col items-center text-center space-y-4">
+              <div className="inline-flex items-baseline">
+                <CountUp
+                  from={0}
+                  to={24}
+                  separator=","
+                  direction="up"
+                  duration={1}
+                  className="text-5xl md:text-7xl font-extrabold text-white tracking-tight"
+                />
+                <span className="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
+                  /7
+                </span>
+              </div>
+
+              <span className="text-white/90 font-medium text-base md:text-lg leading-tight px-2">
+                24/7 Support
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Service Section */}
-      <section className="bg-[#d1d1d1] py-20 border-y border-[#e5e9e8] dark:border-[#1e3a30]">
+      <section className="bg-white dark:bg-background-dark/50 py-20 border-y border-[#e5e9e8]">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
           <div className="flex flex-col gap-4 mb-12">
             <h1 className="text-[#111816] text-3xl font-bold tracking-tight">
               Our Services
             </h1>
             <div className="h-1.5 w-20 bg-green-400 rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {/* Service 1 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <LaptopMinimal />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Web Development
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Custom web applications built with modern frameworks and high
+                  performance.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 2 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Smartphone />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Mobile App Development
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Seamless native and cross-platform experiences for iOS and
+                  Android.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 3 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Code />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  Software Development
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Custom software solutions tailored to your business needs with
+                  cutting-edge technologies.
+                </p>
+              </div>
+            </div>
+
+            {/* Service 4 */}
+            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+              <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
+                <Cpu />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="text-[#111816] text-lg font-bold">
+                  AI / ML Services
+                </h3>
+                <p className="text-[#61897c] dark:text-gray-400 text-md leading-normal">
+                  Advanced machine learning models and intelligent automation
+                  systems.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

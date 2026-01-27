@@ -4,7 +4,12 @@ import Button from "@mui/material/Button";
 import { links } from "@/app/libs/constant/link";
 import { X } from "lucide-react";
 
-const MobileHeader = ({ isOpen, onClose }) => {
+interface MobileHeaderProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const MobileHeader = ({ isOpen, onClose }: MobileHeaderProps) => {
   return (
     <>
       <div
