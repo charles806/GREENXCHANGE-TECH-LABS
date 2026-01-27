@@ -6,6 +6,7 @@ import hero from "@/public/unnamed.png";
 const Home = async () => {
   return (
     <main className="min-h-screen mx-auto">
+      {/* Service Section */}
       <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-12 md:py-20 mt-12">
         <div className="@container">
           <div className="flex flex-col gap-10 @[864px]:flex-row items-center">
@@ -43,6 +44,12 @@ const Home = async () => {
               />
             </div>
           </div>
+        </div>
+      </section>
+      {/* Service Section */}
+      <section className="bg-white dark:bg-background-dark/50 py-20 border-y border-[#e5e9e8] dark:border-[#1e3a30]">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
+          
         </div>
       </section>
     </main>
