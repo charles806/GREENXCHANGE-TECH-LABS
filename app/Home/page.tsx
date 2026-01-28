@@ -3,6 +3,7 @@ import Image from "next/image";
 import { links } from "@/app/libs/constant/link";
 //Image
 import hero from "@/public/unnamed.png";
+import testmonial_one from "@/public/testmonial1.png";
 //UI
 import CountUp from "@/component/UI/CountUp";
 //Icons
@@ -24,6 +25,7 @@ import {
   Star,
   Headset,
 } from "lucide-react";
+import { Rating } from "@mui/material";
 
 const Home = async () => {
   return (
@@ -435,7 +437,118 @@ const Home = async () => {
         </div>
       </section>
 
-      
+      {/* Testimonails */}
+      <section className="bg-primary/5 py-24">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h2 className="text-[#111816] text-4xl md:text-5xl font-bold mb-5 tracking-tight">
+              What Our Clients Say
+            </h2>
+            <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+              Trusted by innovative leaders across various industries worldwide.
+            </p>
+          </div>
+
+          {/* Testimonials Carousel */}
+          <div className="flex gap-8 overflow-x-auto pb-10 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
+            {/* Testimonial Card 1 */}
+            <div className="min-w-[320px] md:min-w-[400px] snap-center bg-white p-10 rounded-3xl shadow-md hover:shadow-xl border border-[#dbe6e2] hover:border-primary/30 flex flex-col gap-7 transition-all duration-300 group">
+              <div className="flex gap-1 text-primary">
+                <Rating
+                  size="small"
+                  readOnly
+                  className="text-green-400! outline-green-300"
+                />
+              </div>
+              <p className="text-gray-700 text-base md:text-lg italic leading-relaxed flex-grow">
+                &quot;Green Exchange Tech Labs transformed our legacy platform
+                into a high-performance cloud ecosystem. Their attention to
+                detail is unmatched.&quot;
+              </p>
+              <div className="flex items-center gap-5 pt-4 border-t border-gray-100">
+                <div className="w-14 h-14 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300">
+                  <Image
+                    src={testmonial_one}
+                    alt="Marcus Thorne"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-[#111816] text-lg">
+                    Marcus Thorne
+                  </p>
+                  <p className="text-sm text-gray-500 mt-0.5">CTO, NexaCorp</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial Card 2 */}
+            <div className="min-w-[320px] md:min-w-[400px] snap-center bg-white p-10 rounded-3xl shadow-md hover:shadow-xl border border-[#dbe6e2] hover:border-primary/30 flex flex-col gap-7 transition-all duration-300 group">
+              <div className="flex gap-1 text-primary">
+                <Rating
+                  size="small"
+                  readOnly
+                  className="text-green-400! outline-green-300"
+                />
+              </div>
+              <p className="text-gray-700 text-base md:text-lg italic leading-relaxed flex-grow">
+                &quot;Green Exchange Tech Labs transformed our legacy platform
+                into a high-performance cloud ecosystem. Their attention to
+                detail is unmatched.&quot;
+              </p>
+              <div className="flex items-center gap-5 pt-4 border-t border-gray-100">
+                <div className="w-14 h-14 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300">
+                  <Image
+                    src={testmonial_one}
+                    alt="Marcus Thorne"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-[#111816] text-lg">
+                    Marcus Thorne
+                  </p>
+                  <p className="text-sm text-gray-500 mt-0.5">CTO, NexaCorp</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Testimonial Card 3 */}
+            <div className="min-w-[320px] md:min-w-[400px] snap-center bg-white p-10 rounded-3xl shadow-md hover:shadow-xl border border-[#dbe6e2] hover:border-primary/30 flex flex-col gap-7 transition-all duration-300 group">
+              <div className="flex gap-1 text-primary">
+                <Rating
+                  size="small"
+                  readOnly
+                  className="text-green-400! outline-green-300"
+                />
+              </div>
+              <p className="text-gray-700 text-base md:text-lg italic leading-relaxed flex-grow">
+                &quot;Green Exchange Tech Labs transformed our legacy platform
+                into a high-performance cloud ecosystem. Their attention to
+                detail is unmatched.&quot;
+              </p>
+              <div className="flex items-center gap-5 pt-4 border-t border-gray-100">
+                <div className="w-14 h-14 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 ring-2 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300">
+                  <Image
+                    src={testmonial_one}
+                    alt="Marcus Thorne"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold text-[#111816] text-lg">
+                    Marcus Thorne
+                  </p>
+                  <p className="text-sm text-gray-500 mt-0.5">CTO, NexaCorp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/*  */}
     </main>
   );
 };
