@@ -25,7 +25,7 @@ import {
   Star,
   Headset,
 } from "lucide-react";
-import { Rating } from "@mui/material";
+import { Button, Rating } from "@mui/material";
 
 const Home = async () => {
   return (
@@ -548,7 +548,23 @@ const Home = async () => {
         </div>
       </section>
 
-      {/*  */}
+      {/* CTA */}
+      <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-20 text-center">
+        <div className="bg-green-500 rounded-4xl p-12 md:p-20 flex flex-col items-center gap-8 shadow-2xl shadow-primary/20">
+          <h2 className="text-white text-3xl md:text-5xl font-black max-w-200 leading-tight">
+            Ready to Modernize Your Business?
+          </h2>
+          <p className="text-white/80 text-lg md:text-xl max-w-150">
+            Join hundreds of industry leaders who have already transformed their
+            digital capabilities with us.
+          </p>
+          <Link href={links[4].href}>
+          <Button className="bg-white! text-green-500! px-10! py-5! rounded-full! font-bold! text-lg! hover:scale-105! transition-transform!">
+            Get Started Today
+          </Button>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 };
