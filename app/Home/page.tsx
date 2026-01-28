@@ -19,6 +19,10 @@ import {
   GraduationCap,
   Palette,
   Wallet,
+  Zap,
+  ShieldCheck,
+  Star,
+  Headset,
 } from "lucide-react";
 
 const Home = async () => {
@@ -351,6 +355,87 @@ const Home = async () => {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Us */}
+      <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-20 @container">
+        <div className="flex flex-col gap-16">
+          {/* Header */}
+          <div className="flex flex-col gap-5 text-center lg:text-left max-w-3xl mx-auto lg:mx-0">
+            <h2 className="text-[#111816] text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+              Why Choose Us
+            </h2>
+            <p className="text-[#4b5e58] text-lg md:text-xl leading-relaxed">
+              We deliver excellence through a combination of elite talent,
+              secure processes, and agile principles.
+            </p>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            {/* Card 1 */}
+            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+              <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                <Zap className="w-6 h-6" />
+              </div>
+              <div className="flex flex-col gap-2.5">
+                <h3 className="text-[#111816] text-xl font-bold leading-snug">
+                  Agile Methodology
+                </h3>
+                <p className="text-[#61897c] text-base font-normal leading-relaxed">
+                  Fast, iterative development cycles that deliver value early.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+              <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div className="flex flex-col gap-2.5">
+                <h3 className="text-[#111816] text-xl font-bold leading-snug">
+                  Enterprise-Grade
+                </h3>
+                <p className="text-[#61897c] text-base font-normal leading-relaxed">
+                  Highest standards of data protection and compliance protocols.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+              <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                <Star className="w-6 h-6" />
+              </div>
+              <div className="flex flex-col gap-2.5">
+                <h3 className="text-[#111816] text-xl font-bold leading-snug">
+                  Expert Talent
+                </h3>
+                <p className="text-[#61897c] text-base font-normal leading-relaxed">
+                  Our team consists of the top 1% industry software specialists.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+              <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                <Headset className="w-6 h-6" />
+              </div>
+              <div className="flex flex-col gap-2.5">
+                <h3 className="text-[#111816] text-xl font-bold leading-snug">
+                  24/7 Support
+                </h3>
+                <p className="text-[#61897c] text-base font-normal leading-relaxed">
+                  Round-the-clock technical assistance and incident response.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
     </main>
   );
 };
