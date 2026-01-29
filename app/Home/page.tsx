@@ -5,9 +5,9 @@ import { links } from "@/app/libs/constant/link";
 import hero from "@/public/unnamed.png";
 import testmonial_one from "@/public/testmonial1.png";
 import aboutImage from "@/public/abot_section.png";
-import project1 from "@/public/project1.png"
-import project2 from "@/public/project2.png"
-import project3 from "@/public/PROJECT3.png"
+import project1 from "@/public/project1.png";
+import project2 from "@/public/project2.png";
+import project3 from "@/public/PROJECT3.png";
 //UI
 import CountUp from "@/component/UI/CountUp";
 //Icons
@@ -28,7 +28,7 @@ import {
   ShieldCheck,
   Star,
   Headset,
-  MoveRight
+  MoveRight,
 } from "lucide-react";
 import { Button, Rating } from "@mui/material";
 
@@ -484,27 +484,27 @@ const Home = async () => {
 
               <div className="p-8 lg:p-10">
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                  E-Commerce Platform
+                  Legal-Gee
                 </h3>
                 <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
-                  A full-featured online marketplace with real-time inventory
-                  management, secure payment processing, and advanced analytics
-                  dashboard.
+                  Legal gee is a law AI that also works with Camera LLM for
+                  picture analysis and Documents LLM that provides more info to
+                  what has been giving using AI powered documents analysis
                 </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
-                    React
+                    Java
                   </span>
                   <span className="px-4 py-2 bg-blue-50 text-blue-700 text-sm font-semibold rounded-full border border-blue-200">
-                    Node.js
+                    R
                   </span>
                   <span className="px-4 py-2 bg-purple-50 text-purple-700 text-sm font-semibold rounded-full border border-purple-200">
-                    MongoDB
+                    Typescript
                   </span>
                   <span className="px-4 py-2 bg-orange-50 text-orange-700 text-sm font-semibold rounded-full border border-orange-200">
-                    AWS
+                    Tensorflow
                   </span>
                 </div>
 
@@ -534,27 +534,28 @@ const Home = async () => {
 
               <div className="p-8 lg:p-10">
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                  AI-Powered Analytics Dashboard
+                  Green Ai
                 </h3>
                 <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
-                  Intelligent business intelligence platform with machine
-                  learning algorithms for predictive analytics and automated
-                  reporting.
+                  Green Ai is a generalized AI that is accurate with different
+                  modes like, humanize AI, Gpt detector and many more and
+                  it&apos;s also used for normal research. Green AI was built
+                  with
                 </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
-                    Next.js
+                    Angular
                   </span>
                   <span className="px-4 py-2 bg-yellow-50 text-yellow-700 text-sm font-semibold rounded-full border border-yellow-200">
-                    Python
+                    Typescript
                   </span>
                   <span className="px-4 py-2 bg-red-50 text-red-700 text-sm font-semibold rounded-full border border-red-200">
-                    TensorFlow
+                    Python(scikit-learn)
                   </span>
                   <span className="px-4 py-2 bg-indigo-50 text-indigo-700 text-sm font-semibold rounded-full border border-indigo-200">
-                    PostgreSQL
+                    R
                   </span>
                 </div>
 
@@ -584,27 +585,29 @@ const Home = async () => {
 
               <div className="p-8 lg:p-10">
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                  Healthcare Management System
+                  GONAGRI
                 </h3>
                 <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
-                  Comprehensive patient management platform with appointment
-                  scheduling, electronic health records, and telemedicine
-                  capabilities.
+                  GONAGRI is a digital B2B marketplace designed to bridge the
+                  gap between local farmers and commercial buyers. We empower
+                  farmers with direct market access, fair pricing, and smart
+                  tools, while providing buyers with a reliable, transparent
+                  source for fresh, high-quality produce.
                 </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
-                    Vue.js
+                    Next.JS
                   </span>
                   <span className="px-4 py-2 bg-blue-50 text-blue-700 text-sm font-semibold rounded-full border border-blue-200">
-                    Django
+                    Node.JS
                   </span>
                   <span className="px-4 py-2 bg-cyan-50 text-cyan-700 text-sm font-semibold rounded-full border border-cyan-200">
-                    MySQL
+                    Posgress SQL
                   </span>
                   <span className="px-4 py-2 bg-pink-50 text-pink-700 text-sm font-semibold rounded-full border border-pink-200">
-                    Docker
+                    Express.JS
                   </span>
                 </div>
 
