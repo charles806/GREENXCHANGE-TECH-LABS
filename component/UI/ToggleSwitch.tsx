@@ -60,13 +60,13 @@ const ToggleSwitch = () => {
             <Sun size={14} className="text-yellow-500" />
           )}
         </div>
-        
+
         {/* Visual icons in the track background for extra flair */}
         <div className="absolute left-2 text-white/50 pointer-events-none">
-           <Sun size={12} className={isDarkMode ? "opacity-100" : "opacity-0"} /> 
+          <Sun size={12} className={isDarkMode ? "opacity-100" : "opacity-0"} />
         </div>
         <div className="absolute right-2 text-white/50 pointer-events-none">
-           <Moon size={12} className={!isDarkMode ? "opacity-100" : "opacity-0"} />
+          <Moon size={12} className={!isDarkMode ? "opacity-100" : "opacity-0"} />
         </div>
       </button>
     </div>

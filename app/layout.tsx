@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import { LoadingProvider } from "@/app/providers/LoadingProvider";
 import GlobalLoader from "@/component/UI/GlobalLoader";
-import ToggleSwitch from "@/component/UI/ToggleSwitch";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,7 +38,6 @@ export default function RootLayout({
             <GlobalLoader />
           </Suspense>
           {children}
-          <ToggleSwitch />
         </LoadingProvider>
       </body>
     </html>

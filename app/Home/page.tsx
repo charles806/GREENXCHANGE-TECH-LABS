@@ -4,6 +4,7 @@ import { links } from "@/app/libs/constant/link";
 //Image
 import hero from "@/public/unnamed.png";
 import testmonial_one from "@/public/testmonial1.png";
+import aboutImage from "@/public/abot_section.png";
 //UI
 import CountUp from "@/component/UI/CountUp";
 //Icons
@@ -358,6 +359,92 @@ const Home = async () => {
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="py-16 md:py-24 lg:py-32 bg-linear-to-b from-white to-gray-50/50 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Image Column */}
+            <div className="order-2 lg:order-1">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-linear-to-br from-green-500/20 to-green-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-50"></div>
+                <Image
+                  src={aboutImage}
+                  alt="About Section"
+                  className="relative rounded-3xl shadow-2xl ring-1 ring-gray-200/50 group-hover:shadow-3xl group-hover:scale-[1.02] transition-all duration-500"
+                />
+              </div>
+            </div>
+
+            {/* Content Column */}
+            <div className="order-1 lg:order-2 space-y-8">
+              {/* Heading */}
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-500 leading-tight tracking-tight">
+                  About Us
+                </h2>
+                <div className="w-20 h-1.5 bg-linear-to-r from-green-500 to-green-600 rounded-full"></div>
+              </div>
+
+              {/* Description */}
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                At Green Exchange Tech Labs, we build technology that
+                works—efficiently, intelligently, and at scale. We specialize in
+                delivering modern digital solutions that help businesses grow,
+                adapt, and stay ahead in an ever-evolving tech landscape. From
+                web and software development to AI-driven solutions and cloud
+                technologies, our focus is simple: precision, speed, and
+                quality.
+              </p>
+
+              {/* Mission & Vision Grid */}
+              <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 pt-4">
+                <div className="bg-white p-6 lg:p-8 rounded-2xl shadow-md hover:shadow-xl border border-gray-100 hover:border-green-200 transition-all duration-300 group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white text-xl font-bold">M</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">
+                      Our Mission
+                    </h4>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+                    Deliver fast, precise, and cutting-edge technology solutions
+                    that exceed expectations and drive real results.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 lg:p-8 rounded-2xl shadow-md hover:shadow-xl border border-gray-100 hover:border-green-200 transition-all duration-300 group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-linear-to-br from-orange-400 to-orange-500 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white text-xl font-bold">V</span>
+                    </div>
+                    <h4 className="text-xl font-bold text-gray-900">
+                      Our Vision
+                    </h4>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+                    Lead the future of innovation through AI and modern
+                    technology, creating impactful digital solutions for a
+                    smarter world.
+                  </p>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link href={links[1].href}>
+                  <Button className="flex! min-w-40! cursor-pointer! items-center! justify-center! rounded-xl! h-14! md:h-16! px-8! md:px-10! bg-primary! text-[#111816]! dark:text-white! text-base! md:text-lg! font-bold! tracking-wide! hover:bg-green-600! hover:text-white! shadow-lg! hover:shadow-2xl! hover:shadow-green-500/40! hover:scale-105! transition-all! duration-300! group!">
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      Learn More About Us
+                    </span>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-20 @container">
         <div className="flex flex-col gap-16">
@@ -559,9 +646,9 @@ const Home = async () => {
             digital capabilities with us.
           </p>
           <Link href={links[4].href}>
-          <Button className="bg-white! text-green-500! px-10! py-5! rounded-full! font-bold! text-lg! hover:scale-105! transition-transform!">
-            Get Started Today
-          </Button>
+            <Button className="bg-white! text-green-500! px-10! py-5! rounded-full! font-bold! text-lg! hover:scale-105! transition-transform!">
+              Get Started Today
+            </Button>
           </Link>
         </div>
       </section>
