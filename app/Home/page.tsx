@@ -5,6 +5,9 @@ import { links } from "@/app/libs/constant/link";
 import hero from "@/public/unnamed.png";
 import testmonial_one from "@/public/testmonial1.png";
 import aboutImage from "@/public/abot_section.png";
+import project1 from "@/public/project1.png"
+import project2 from "@/public/project2.png"
+import project3 from "@/public/PROJECT3.png"
 //UI
 import CountUp from "@/component/UI/CountUp";
 //Icons
@@ -25,6 +28,7 @@ import {
   ShieldCheck,
   Star,
   Headset,
+  MoveRight
 } from "lucide-react";
 import { Button, Rating } from "@mui/material";
 
@@ -441,6 +445,252 @@ const Home = async () => {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="py-16 md:py-24 lg:py-32 bg-linear-to-b from-gray-50/50 to-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12">
+          {/* Section Header */}
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-block mb-4">
+              <span className="text-green-600 text-sm md:text-base font-bold uppercase tracking-wider bg-green-50 px-4 py-2 rounded-full">
+                Our Work
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
+              Featured Projects
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Explore some of our recent work where innovation meets execution.
+              Each project showcases our commitment to quality and cutting-edge
+              technology.
+            </p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-16">
+            {/* Project Card 1 */}
+            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
+              <div className="relative overflow-hidden aspect-video bg-gray-100">
+                <Image
+                  src={project1}
+                  alt="E-Commerce Platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              <div className="p-8 lg:p-10">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                  E-Commerce Platform
+                </h3>
+                <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
+                  A full-featured online marketplace with real-time inventory
+                  management, secure payment processing, and advanced analytics
+                  dashboard.
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
+                    React
+                  </span>
+                  <span className="px-4 py-2 bg-blue-50 text-blue-700 text-sm font-semibold rounded-full border border-blue-200">
+                    Node.js
+                  </span>
+                  <span className="px-4 py-2 bg-purple-50 text-purple-700 text-sm font-semibold rounded-full border border-purple-200">
+                    MongoDB
+                  </span>
+                  <span className="px-4 py-2 bg-orange-50 text-orange-700 text-sm font-semibold rounded-full border border-orange-200">
+                    AWS
+                  </span>
+                </div>
+
+                {/* CTA Link */}
+                <Link
+                  href="https://legalgee.com"
+                  className="inline-flex items-center gap-2 text-green-600 font-bold text-lg hover:text-green-700 group/link"
+                >
+                  <span className="border-b-2 border-transparent group-hover/link:border-green-600 transition-all duration-300">
+                    View Project
+                  </span>
+                  <MoveRight />
+                </Link>
+              </div>
+            </div>
+
+            {/* Project Card 2 */}
+            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
+              <div className="relative overflow-hidden aspect-video bg-gray-100">
+                <Image
+                  src={project2}
+                  alt="AI-Powered Analytics Dashboard"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              <div className="p-8 lg:p-10">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                  AI-Powered Analytics Dashboard
+                </h3>
+                <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
+                  Intelligent business intelligence platform with machine
+                  learning algorithms for predictive analytics and automated
+                  reporting.
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
+                    Next.js
+                  </span>
+                  <span className="px-4 py-2 bg-yellow-50 text-yellow-700 text-sm font-semibold rounded-full border border-yellow-200">
+                    Python
+                  </span>
+                  <span className="px-4 py-2 bg-red-50 text-red-700 text-sm font-semibold rounded-full border border-red-200">
+                    TensorFlow
+                  </span>
+                  <span className="px-4 py-2 bg-indigo-50 text-indigo-700 text-sm font-semibold rounded-full border border-indigo-200">
+                    PostgreSQL
+                  </span>
+                </div>
+
+                {/* CTA Link */}
+                <Link
+                  href="https://greenxai.vercel.app"
+                  className="inline-flex items-center gap-2 text-green-600 font-bold text-lg hover:text-green-700 group/link"
+                >
+                  <span className="border-b-2 border-transparent group-hover/link:border-green-600 transition-all duration-300">
+                    View Project
+                  </span>
+                  <MoveRight />
+                </Link>
+              </div>
+            </div>
+
+            {/* Project Card 3 */}
+            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
+              <div className="relative overflow-hidden aspect-video bg-gray-100">
+                <Image
+                  src={project3}
+                  alt="Healthcare Management System"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              <div className="p-8 lg:p-10">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                  Healthcare Management System
+                </h3>
+                <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
+                  Comprehensive patient management platform with appointment
+                  scheduling, electronic health records, and telemedicine
+                  capabilities.
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
+                    Vue.js
+                  </span>
+                  <span className="px-4 py-2 bg-blue-50 text-blue-700 text-sm font-semibold rounded-full border border-blue-200">
+                    Django
+                  </span>
+                  <span className="px-4 py-2 bg-cyan-50 text-cyan-700 text-sm font-semibold rounded-full border border-cyan-200">
+                    MySQL
+                  </span>
+                  <span className="px-4 py-2 bg-pink-50 text-pink-700 text-sm font-semibold rounded-full border border-pink-200">
+                    Docker
+                  </span>
+                </div>
+
+                {/* CTA Link */}
+                <Link
+                  href="https://gonagri.vercel.app"
+                  className="inline-flex items-center gap-2 text-green-600 font-bold text-lg hover:text-green-700 group/link"
+                >
+                  <span className="border-b-2 border-transparent group-hover/link:border-green-600 transition-all duration-300">
+                    View Project
+                  </span>
+                  <MoveRight />
+                </Link>
+              </div>
+            </div>
+
+            {/* Project Card 4 */}
+            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
+              <div className="relative overflow-hidden aspect-video bg-gray-100">
+                <Image
+                  src={hero}
+                  alt="Real-Time Collaboration Tool"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              <div className="p-8 lg:p-10">
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
+                  Real-Time Collaboration Tool
+                </h3>
+                <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
+                  Cloud-based workspace with live document editing, video
+                  conferencing, and integrated project management features.
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
+                    React
+                  </span>
+                  <span className="px-4 py-2 bg-teal-50 text-teal-700 text-sm font-semibold rounded-full border border-teal-200">
+                    Socket.io
+                  </span>
+                  <span className="px-4 py-2 bg-purple-50 text-purple-700 text-sm font-semibold rounded-full border border-purple-200">
+                    Redis
+                  </span>
+                  <span className="px-4 py-2 bg-gray-50 text-gray-700 text-sm font-semibold rounded-full border border-gray-200">
+                    Kubernetes
+                  </span>
+                </div>
+
+                {/* CTA Link */}
+                <Link
+                  href="/projects/collaboration-tool"
+                  className="inline-flex items-center gap-2 text-green-600 font-bold text-lg hover:text-green-700 group/link"
+                >
+                  <span className="border-b-2 border-transparent group-hover/link:border-green-600 transition-all duration-300">
+                    View Project
+                  </span>
+                  <MoveRight />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* View All Projects Button */}
+          <div className="text-center">
+            <Link href="/projects">
+              <Button className="inline-flex! items-center! gap-3! px-10! py-6! md:px-12! md:py-7! bg-linear-to-r! from-green-500! to-green-600! text-white! text-lg! md:text-xl! font-bold! rounded-2xl! shadow-xl! hover:shadow-2xl! hover:shadow-green-500/40! hover:scale-105! transition-all! duration-300! group!">
+                <span>View All Projects</span>
+                <svg
+                  className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

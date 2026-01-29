@@ -64,7 +64,7 @@ function LoadingProviderContent({ children }: LoadingProviderProps) {
   useEffect(() => {
     if (!pageLoadComplete || !loadingStartTime) return;
 
-    const MINIMUM_DISPLAY_TIME = 100;
+    const MINIMUM_DISPLAY_TIME = 5000;
     const elapsedTime = Date.now() - loadingStartTime;
     const remainingTime = Math.max(0, MINIMUM_DISPLAY_TIME - elapsedTime);
 
