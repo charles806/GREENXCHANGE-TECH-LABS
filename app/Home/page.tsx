@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { links } from "@/app/libs/constant/link";
@@ -31,15 +33,47 @@ import {
   MoveRight,
 } from "lucide-react";
 import { Button, Rating } from "@mui/material";
+import { motion } from "motion/react";
 
-const Home = async () => {
+const Home = () => {
+  // Animation Variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const fadeInLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
   return (
-    <main className="min-h-screen mx-auto bg-[#e8e8e8]">
+    <main className="min-h-screen mx-auto bg-[#e8e8e8] overflow-hidden">
       {/* Home Section */}
       <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-12 md:py-20 mt-12">
         <div className="@container">
           <div className="flex flex-col gap-10 @[864px]:flex-row items-center">
-            <div className="flex flex-col gap-8 @[864px]:flex-1">
+            <motion.div
+              className="flex flex-col gap-8 @[864px]:flex-1"
+              initial="hidden"
+              animate="visible"
+              variants={fadeInLeft}
+            >
               <div className="flex flex-col gap-4 text-left">
                 <h1 className="text-[#111816] text-4xl font-black leading-tight tracking-tight @[480px]:text-6xl">
                   Innovative <br /> Technology <br /> Solutions for <br />
@@ -63,21 +97,32 @@ const Home = async () => {
                   </button>
                 </Link>
               </div>
-            </div>
-            <div className="w-full @[864px]:flex-1 h-75 @[864px]:h-120 bg-center bg-no-repeat bg-cover rounded-2xl shadow-2xl relative overflow-hidden">
+            </motion.div>
+            <motion.div
+              className="w-full @[864px]:flex-1 h-75 @[864px]:h-120 bg-center bg-no-repeat bg-cover rounded-2xl shadow-2xl relative overflow-hidden"
+              initial="hidden"
+              animate="visible"
+              variants={fadeInRight}
+            >
               <Image
                 src={hero}
                 alt="Hero Image showcasing GreenXchange technology solutions"
                 className="w-full h-full object-cover"
                 priority
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Quick Overview */}
-      <section className="bg-green-500 mx-auto w-full px-6 md:px-10 py-12 md:py-12 mt-12 border border-t">
+      <motion.section
+        className="bg-green-500 mx-auto w-full px-6 md:px-10 py-12 md:py-12 mt-12 border border-t"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             <div className="flex flex-col items-center text-center space-y-4">
@@ -158,20 +203,32 @@ const Home = async () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Service Section */}
       <section className="bg-white dark:bg-background-dark/50 py-20 border-y border-[#e5e9e8]">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
-          <div className="flex flex-col gap-4 mb-12">
+          <motion.div
+            className="flex flex-col gap-4 mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
             <h1 className="text-[#111816] text-3xl font-bold tracking-tight">
               Our Services
             </h1>
             <div className="h-1.5 w-20 bg-green-400 rounded-full"></div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          </motion.div>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+          >
             {/* Service 1 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <LaptopMinimal />
               </div>
@@ -184,10 +241,10 @@ const Home = async () => {
                   performance.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 2 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Smartphone />
               </div>
@@ -200,10 +257,10 @@ const Home = async () => {
                   Android.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 3 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Code />
               </div>
@@ -216,10 +273,10 @@ const Home = async () => {
                   cutting-edge technologies.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 4 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Cpu />
               </div>
@@ -232,10 +289,10 @@ const Home = async () => {
                   systems.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 5 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <CloudUpload />
               </div>
@@ -248,10 +305,10 @@ const Home = async () => {
                   management.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 6 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Shield />
               </div>
@@ -263,10 +320,10 @@ const Home = async () => {
                   Enterprise-grade protection and proactive threat intelligence.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 7 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Globe />
               </div>
@@ -279,10 +336,10 @@ const Home = async () => {
                   connectivity.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 8 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Wrench />
               </div>
@@ -295,10 +352,10 @@ const Home = async () => {
                   smoothly.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 9 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Brain />
               </div>
@@ -311,10 +368,10 @@ const Home = async () => {
                   technologies..
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 10 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <GraduationCap />
               </div>
@@ -327,10 +384,10 @@ const Home = async () => {
                   careers.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 11 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Palette />
               </div>
@@ -343,10 +400,10 @@ const Home = async () => {
                   stand out.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Service 12 */}
-            <div className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
+            <motion.div variants={fadeInUp} className="group flex flex-col gap-4 rounded-xl border border-[#0ca871] bg-white  p-6 hover:shadow-xl hover:border-green-600 shadow-green-200 transition-all cursor-pointer">
               <div className="text-green-600 font-semibold text-xl group-hover:scale-110 transition-transform duration-300">
                 <Wallet />
               </div>
@@ -358,8 +415,8 @@ const Home = async () => {
                   Secure digital gift cards for seamless payments and rewards.
                 </p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -368,7 +425,13 @@ const Home = async () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image Column */}
-            <div className="order-2 lg:order-1">
+            <motion.div
+              className="order-2 lg:order-1"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInLeft}
+            >
               <div className="relative group">
                 <div className="absolute inset-0 bg-linear-to-br from-green-500/20 to-green-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-50"></div>
                 <Image
@@ -377,10 +440,16 @@ const Home = async () => {
                   className="relative rounded-3xl shadow-2xl ring-1 ring-gray-200/50 group-hover:shadow-3xl group-hover:scale-[1.02] transition-all duration-500"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Content Column */}
-            <div className="order-1 lg:order-2 space-y-8">
+            <motion.div
+              className="order-1 lg:order-2 space-y-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInRight}
+            >
               {/* Heading */}
               <div className="space-y-4">
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-green-500 leading-tight tracking-tight">
@@ -444,7 +513,7 @@ const Home = async () => {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -453,7 +522,13 @@ const Home = async () => {
       <section className="py-16 md:py-24 lg:py-32 bg-linear-to-b from-gray-50/50 to-white">
         <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12">
           {/* Section Header */}
-          <div className="text-center mb-16 lg:mb-20">
+          <motion.div
+            className="text-center mb-16 lg:mb-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
             <div className="inline-block mb-4">
               <span className="text-green-600 text-sm md:text-base font-bold uppercase tracking-wider bg-green-50 px-4 py-2 rounded-full">
                 Our Work
@@ -467,12 +542,18 @@ const Home = async () => {
               Each project showcases our commitment to quality and cutting-edge
               technology.
             </p>
-          </div>
+          </motion.div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-16">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={staggerContainer}
+          >
             {/* Project Card 1 */}
-            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
+            <motion.div variants={fadeInUp} className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
               <div className="relative overflow-hidden aspect-video bg-gray-100">
                 <Image
                   src={project1}
@@ -519,10 +600,10 @@ const Home = async () => {
                   <MoveRight />
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Project Card 2 */}
-            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
+            <motion.div variants={fadeInUp} className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
               <div className="relative overflow-hidden aspect-video bg-gray-100">
                 <Image
                   src={project2}
@@ -570,10 +651,10 @@ const Home = async () => {
                   <MoveRight />
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Project Card 3 */}
-            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
+            <motion.div variants={fadeInUp} className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
               <div className="relative overflow-hidden aspect-video bg-gray-100">
                 <Image
                   src={project3}
@@ -622,57 +703,8 @@ const Home = async () => {
                   <MoveRight />
                 </Link>
               </div>
-            </div>
-
-            {/* Project Card 4 */}
-            <div className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-200 hover:border-green-200 transition-all duration-500">
-              <div className="relative overflow-hidden aspect-video bg-gray-100">
-                <Image
-                  src={hero}
-                  alt="Real-Time Collaboration Tool"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-
-              <div className="p-8 lg:p-10">
-                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                  Real-Time Collaboration Tool
-                </h3>
-                <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-6">
-                  Cloud-based workspace with live document editing, video
-                  conferencing, and integrated project management features.
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="px-4 py-2 bg-green-50 text-green-700 text-sm font-semibold rounded-full border border-green-200">
-                    React
-                  </span>
-                  <span className="px-4 py-2 bg-teal-50 text-teal-700 text-sm font-semibold rounded-full border border-teal-200">
-                    Socket.io
-                  </span>
-                  <span className="px-4 py-2 bg-purple-50 text-purple-700 text-sm font-semibold rounded-full border border-purple-200">
-                    Redis
-                  </span>
-                  <span className="px-4 py-2 bg-gray-50 text-gray-700 text-sm font-semibold rounded-full border border-gray-200">
-                    Kubernetes
-                  </span>
-                </div>
-
-                {/* CTA Link */}
-                <Link
-                  href="/projects/collaboration-tool"
-                  className="inline-flex items-center gap-2 text-green-600 font-bold text-lg hover:text-green-700 group/link"
-                >
-                  <span className="border-b-2 border-transparent group-hover/link:border-green-600 transition-all duration-300">
-                    View Project
-                  </span>
-                  <MoveRight />
-                </Link>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* View All Projects Button */}
           <div className="text-center">
@@ -699,10 +731,19 @@ const Home = async () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-20 @container">
+      <motion.section
+        className="max-w-7xl mx-auto w-full px-6 md:px-10 py-20 @container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={staggerContainer}
+      >
         <div className="flex flex-col gap-16">
           {/* Header */}
-          <div className="flex flex-col gap-5 text-center lg:text-left max-w-3xl mx-auto lg:mx-0">
+          <motion.div
+            className="flex flex-col gap-5 text-center lg:text-left max-w-3xl mx-auto lg:mx-0"
+            variants={fadeInLeft}
+          >
             <h2 className="text-[#111816] text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               Why Choose Us
             </h2>
@@ -710,12 +751,15 @@ const Home = async () => {
               We deliver excellence through a combination of elite talent,
               secure processes, and agile principles.
             </p>
-          </div>
+          </motion.div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6"
+            variants={staggerContainer}
+          >
             {/* Card 1 */}
-            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+            <motion.div variants={fadeInUp} className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
               <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
                 <Zap className="w-6 h-6" />
               </div>
@@ -727,10 +771,10 @@ const Home = async () => {
                   Fast, iterative development cycles that deliver value early.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+            <motion.div variants={fadeInUp} className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
               <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
                 <ShieldCheck className="w-6 h-6" />
               </div>
@@ -742,10 +786,10 @@ const Home = async () => {
                   Highest standards of data protection and compliance protocols.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+            <motion.div variants={fadeInUp} className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
               <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
                 <Star className="w-6 h-6" />
               </div>
@@ -757,10 +801,10 @@ const Home = async () => {
                   Our team consists of the top 1% industry software specialists.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 4 */}
-            <div className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
+            <motion.div variants={fadeInUp} className="flex flex-col gap-4 p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300 group cursor-pointer">
               <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
                 <Headset className="w-6 h-6" />
               </div>
@@ -772,26 +816,38 @@ const Home = async () => {
                   Round-the-clock technical assistance and incident response.
                 </p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonails */}
       <section className="bg-primary/5 py-24">
         <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
           {/* Header */}
-          <div className="text-center mb-20">
+          <motion.div
+            className="text-center mb-20"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
             <h2 className="text-[#111816] text-4xl md:text-5xl font-bold mb-5 tracking-tight">
               What Our Clients Say
             </h2>
             <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
               Trusted by innovative leaders across various industries worldwide.
             </p>
-          </div>
+          </motion.div>
 
           {/* Testimonials Carousel */}
-          <div className="flex gap-8 overflow-x-auto pb-10 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
+          <motion.div
+            className="flex gap-8 overflow-x-auto pb-10 snap-x snap-mandatory no-scrollbar -mx-6 px-6 md:mx-0 md:px-0"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInRight}
+          >
             {/* Testimonial Card 1 */}
             <div className="min-w-[320px] md:min-w-[400px] snap-center bg-white p-10 rounded-3xl shadow-md hover:shadow-xl border border-[#dbe6e2] hover:border-primary/30 flex flex-col gap-7 transition-all duration-300 group">
               <div className="flex gap-1 text-primary">
@@ -884,13 +940,19 @@ const Home = async () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto w-full px-6 md:px-10 py-20 text-center">
-        <div className="bg-green-500 rounded-4xl p-12 md:p-20 flex flex-col items-center gap-8 shadow-2xl shadow-primary/20">
+        <motion.div
+          className="bg-green-500 rounded-4xl p-12 md:p-20 flex flex-col items-center gap-8 shadow-2xl shadow-primary/20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
           <h2 className="text-white text-3xl md:text-5xl font-black max-w-200 leading-tight">
             Ready to Modernize Your Business?
           </h2>
@@ -903,7 +965,7 @@ const Home = async () => {
               Get Started Today
             </Button>
           </Link>
-        </div>
+        </motion.div>
       </section>
     </main>
   );
