@@ -19,10 +19,11 @@ export const ServiceLinks: Link[] = [
     { name: "Cyber Security & Penetration Testing", href: "/services/cyber-security" },
     { name: "Networking", href: "/services/networking" },
     { name: "Cloud Services", href: "/services/cloud-services" },
-    {name: "AI/Data Analytics", href: "/services/ai-data-analytics"},
+    {name: "AI/ML", href: "/services/ai-ml"},
     {name: "DevOps", href: "/services/devops"},
     {name: "Tech Support", href: "/services/tech-support"},
     {name: "Digital & Creative Services", href: "/services/digital-creative"},
     {name: "Financial Digital Services", href: "/services/financial-digital"},
+    {name: "Education & Mentorship", href: "/services/education-mentorship"},
     
 ];

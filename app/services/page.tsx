@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -6,7 +7,21 @@ import Header from "@/component/layout/Header/Header";
 import Footer from "@/component/layout/Footer/Footer";
 import { ServiceLinks, links } from "@/app/libs/constant/link";
 import { MoveRight, CheckCircle2 } from "lucide-react";
-import heroBg from "@/public/abtPage.png"; // Reusing about page hero as requested "Similar layout... placeholder images"
+import heroBg from "@/public/abtPage.png";
+
+// Service Images
+import webDevImg from "@/public/webdev.png";
+import appDevImg from "@/public/appdev.png";
+import softDevImg from "@/public/softwaredev.png";
+import cyberSecImg from "@/public/cybersec.png";
+import networkingImg from "@/public/networking.png";
+import cloudImg from "@/public/cloud.png";
+import aiImg from "@/public/ai.png";
+import devOpsImg from "@/public/devops.png";
+import techSupportImg from "@/public/techsupport.png";
+import digitalCreativeImg from "@/public/design&crative.png";
+import financeImg from "@/public/finivalservices.png";
+import eduMentorImg from "@/public/edumentor.png";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
@@ -28,66 +43,84 @@ const servicesData = [
         description: "High-performance, responsive websites and web applications built with modern frameworks to provide seamless digital experiences.",
         tools: ["React", "Next.js", "Tailwind CSS", "Node.js"],
         link: ServiceLinks.find(l => l.name === "Web Development")?.href || "/services/web-development",
+        image: webDevImg,
     },
     {
         title: "Mobile App Development",
         description: "Native and cross-platform mobile solutions that connect your brand with users on any device, anywhere in the world.",
         tools: ["React Native", "Flutter", "iOS", "Android"],
         link: ServiceLinks.find(l => l.name === "Mobile App Development")?.href || "/services/mobile-app-development",
+        image: appDevImg,
     },
     {
         title: "Software Development",
         description: "Tailored software solutions designed from the ground up to meet your specific business logic and scaling requirements.",
         tools: ["Python", "Java", "C#", "SQL"],
         link: ServiceLinks.find(l => l.name === "Software Development")?.href || "/services/software-development",
+        image: softDevImg,
     },
     {
         title: "Cyber Security & Penetration Testing",
         description: "Advanced threat protection, vulnerability assessments, and 24/7 monitoring to keep your enterprise data safe.",
         tools: ["Kali Linux", "Wireshark", "Metasploit", "Audits"],
         link: ServiceLinks.find(l => l.name === "Cyber Security & Penetration Testing")?.href || "/services/cyber-security",
+        image: cyberSecImg,
     },
     {
         title: "Networking",
         description: "Robust network architecture design, implementation, and optimization to ensure reliable and secure connectivity.",
         tools: ["Cisco", "Juniper", "Firewalls", "VPNs"],
         link: ServiceLinks.find(l => l.name === "Networking")?.href || "/services/networking",
+        image: networkingImg,
     },
     {
         title: "Cloud Services",
         description: "Scalable cloud infrastructure, migration, and management services for AWS, Azure, and GCP to optimize efficiency.",
         tools: ["AWS", "Azure", "Docker", "Kubernetes"],
         link: ServiceLinks.find(l => l.name === "Cloud Services")?.href || "/services/cloud-services",
+        image: cloudImg,
     },
     {
-        title: "AI / Data Analytics",
+        title: "AI / ML",
         description: "Leverage intelligent algorithms and predictive models to automate workflows and gain deep business insights.",
         tools: ["TensorFlow", "PyTorch", "Tableau", "BigQuery"],
-        link: ServiceLinks.find(l => l.name === "AI/Data Analytics")?.href || "/services/ai-data-analytics",
+        link: ServiceLinks.find(l => l.name === "AI/ML")?.href || "/services/ai-ml",
+        image: aiImg,
     },
     {
         title: "DevOps",
         description: "Streamline your development lifecycle with CI/CD pipelines, automation, and continuous monitoring.",
         tools: ["Jenkins", "GitLab", "Terraform", "Ansible"],
         link: ServiceLinks.find(l => l.name === "DevOps")?.href || "/services/devops",
+        image: devOpsImg,
     },
     {
         title: "Tech Support",
         description: "Full-spectrum technical support and infrastructure maintenance so you can focus on growing your core business.",
         tools: ["Help Desk", "Remote Support", "Maintenance", "SLA"],
         link: ServiceLinks.find(l => l.name === "Tech Support")?.href || "/services/tech-support",
+        image: techSupportImg,
     },
     {
         title: "Digital & Creative Services",
         description: "Branding, UI/UX design, and creative strategies that make your business stand out in a crowded market.",
         tools: ["Figma", "Adobe CC", "Blender", "Strategy"],
         link: ServiceLinks.find(l => l.name === "Digital & Creative Services")?.href || "/services/digital-creative",
+        image: digitalCreativeImg,
     },
     {
         title: "Financial Digital Services",
         description: "Secure fintech solutions, payment gateway integration, and digital banking architectures.",
         tools: ["FinTech", "Blockchain", "Stripe", "PCI DSS"],
         link: ServiceLinks.find(l => l.name === "Financial Digital Services")?.href || "/services/financial-digital",
+        image: financeImg,
+    },
+    {
+        title: "Education & Mentorship",
+        description: "Comprehensive training programs and mentorship to build the next generation of tech leaders.",
+        tools: ["Workshops", "Bootcamps", "1-on-1", "Career Growth"],
+        link: ServiceLinks.find(l => l.name === "Education & Mentorship")?.href || "/services/education-mentorship",
+        image: eduMentorImg,
     },
 ];
 
@@ -176,14 +209,15 @@ const ServicesPage = () => {
                                     variants={fadeInUp}
                                     className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300 group cursor-pointer"
                                 >
-                                    {/* Placeholder Image Area */}
+                                    {/* Service Image Area */}
                                     <div className="h-48 bg-gray-100 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-                                        <div className={`absolute inset-0 bg-gradient-to-br from-green-500/10 to-blue-500/10`} />
-                                        {/* We could use real images here later. For now, a subtle pattern or text placeholder */}
-                                        <div className="absolute inset-0 flex items-center justify-center text-gray-300">
-                                            {/* Simple icon or text placeholder */}
-                                            <span className="font-bold text-4xl text-gray-200 select-none">{service.title[0]}</span>
-                                        </div>
+                                        <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
                                     </div>
 
                                     <div className="p-8 flex flex-col flex-grow">

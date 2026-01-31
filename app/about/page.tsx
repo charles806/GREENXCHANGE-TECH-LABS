@@ -49,7 +49,7 @@ const AboutPage = () => {
           <div className="absolute inset-0 z-0">
             <Image
               src="/abtPage.png"
-              alt="Green Exchange Tech Labs Office"
+              alt="Greenxchange Tech Labs Office"
               fill
               className="object-cover brightness-50"
               priority
@@ -96,7 +96,7 @@ const AboutPage = () => {
                 Architecting the Future of Digital Business
               </h3>
               <p className="mb-6 text-lg text-gray-600 leading-relaxed">
-                At Green Exchange Tech Labs, we don't just write code; we solve complex business problems.
+                At Greenxchange Tech Labs, we don't just write code; we solve complex business problems.
                 Our team of expert engineers and strategists is dedicated to delivering robust, scalable,
                 and innovative solutions that drive growth.
               </p>
@@ -289,7 +289,7 @@ const AboutPage = () => {
               From Concept to Code
             </h3>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              Green Exchange Tech Labs began with a simple idea: that technology should
+              Greenxchange Tech Labs began with a simple idea: that technology should
               enhance human capability, not replace it. Founded by a group of passionate
               engineers, we've grown into a dynamic agency known for tackling the
               toughest digital challenges. We are driven by curiosity and united by

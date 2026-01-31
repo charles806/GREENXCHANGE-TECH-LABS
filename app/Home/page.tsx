@@ -460,7 +460,7 @@ const Home = () => {
 
               {/* Description */}
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                At Green Exchange Tech Labs, we build technology that
+                At Greenxchange Tech Labs, we build technology that
                 works—efficiently, intelligently, and at scale. We specialize in
                 delivering modern digital solutions that help businesses grow,
                 adapt, and stay ahead in an ever-evolving tech landscape. From
@@ -858,7 +858,7 @@ const Home = () => {
                 />
               </div>
               <p className="text-gray-700 text-base md:text-lg italic leading-relaxed flex-grow">
-                &quot;Green Exchange Tech Labs transformed our legacy platform
+                &quot;Greenxchange Tech Labs transformed our legacy platform
                 into a high-performance cloud ecosystem. Their attention to
                 detail is unmatched.&quot;
               </p>
@@ -889,7 +889,7 @@ const Home = () => {
                 />
               </div>
               <p className="text-gray-700 text-base md:text-lg italic leading-relaxed flex-grow">
-                &quot;Green Exchange Tech Labs transformed our legacy platform
+                &quot;Greenxchange Tech Labs transformed our legacy platform
                 into a high-performance cloud ecosystem. Their attention to
                 detail is unmatched.&quot;
               </p>
@@ -920,7 +920,7 @@ const Home = () => {
                 />
               </div>
               <p className="text-gray-700 text-base md:text-lg italic leading-relaxed flex-grow">
-                &quot;Green Exchange Tech Labs transformed our legacy platform
+                &quot;Greenxchange Tech Labs transformed our legacy platform
                 into a high-performance cloud ecosystem. Their attention to
                 detail is unmatched.&quot;
               </p>
